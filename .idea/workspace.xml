@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89713a94-de5f-405b-af3f-99de570dfda2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/graphics/vertex.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Assets.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/creatures/Builder.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Creature.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Landscape.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/peterrockwell.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game.as" afterPath="$PROJECT_DIR$/src/Game.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hylozo.as" afterPath="$PROJECT_DIR$/src/Hylozo.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hylozo.iml" afterPath="$PROJECT_DIR$/hylozo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Hylozo.iws" />
@@ -21,7 +11,7 @@
     <file path="/a.as" changelist="89713a94-de5f-405b-af3f-99de570dfda2" time="1378148389737" ignored="false" />
     <file path="/Game.as" changelist="89713a94-de5f-405b-af3f-99de570dfda2" time="1378160159897" ignored="false" />
     <file path="/Hylozo-app.xml" changelist="89713a94-de5f-405b-af3f-99de570dfda2" time="1378149440780" ignored="false" />
-    <file path="/Dummy.txt" changelist="89713a94-de5f-405b-af3f-99de570dfda2" time="1378161363884" ignored="false" />
+    <file path="/Dummy.txt" changelist="89713a94-de5f-405b-af3f-99de570dfda2" time="1378161416300" ignored="false" />
     <file path="/Landscape.as" changelist="89713a94-de5f-405b-af3f-99de570dfda2" time="1378159539219" ignored="false" />
     <file path="$PROJECT_DIR$/../Kodama/src/Planet.as" changelist="89713a94-de5f-405b-af3f-99de570dfda2" time="1378152471219" ignored="false" />
     <file path="/Builder.as" changelist="89713a94-de5f-405b-af3f-99de570dfda2" time="1378160218321" ignored="false" />
@@ -87,42 +77,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Game.as" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Game.as" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="14" selection-start="247" selection-end="247" vertical-scroll-proportion="0.5">
-              <folding>
-                <element signature="e#110#135#0" expanded="true" />
-              </folding>
+            <state line="15" column="14" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Landscape.as" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Landscape.as" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Landscape.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="41" selection-start="1751" selection-end="1761" vertical-scroll-proportion="0.0">
+            <state line="69" column="1" selection-start="1792" selection-end="1792" vertical-scroll-proportion="2.07">
               <folding>
-                <element signature="e#110#143#0" expanded="true" />
+                <element signature="e#110#140#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Builder.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/creatures/Builder.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="47" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Creature.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Creature.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="9" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -151,8 +121,8 @@
         <option value="$PROJECT_DIR$/src/Assets.as" />
         <option value="$PROJECT_DIR$/src/Landscape.as" />
         <option value="$PROJECT_DIR$/src/Creature.as" />
-        <option value="$PROJECT_DIR$/src/Game.as" />
         <option value="$PROJECT_DIR$/src/creatures/Builder.as" />
+        <option value="$PROJECT_DIR$/src/Game.as" />
       </list>
     </option>
   </component>
@@ -483,6 +453,11 @@
       <created>1378147873490</created>
       <updated>1378147873490</updated>
     </task>
+    <task id="LOCAL-00001" summary="Adding landscape and test creature.">
+      <created>1378161478810</created>
+      <updated>1378161478810</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -498,7 +473,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -518,7 +493,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
       <value>
@@ -557,7 +532,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="Adding landscape and test creature." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -617,9 +592,7 @@
     <entry file="file://$PROJECT_DIR$/src/Assets.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="55" selection-start="526" selection-end="526" vertical-scroll-proportion="0.39256197">
-          <folding>
-            <element signature="e#110#138#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -630,12 +603,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Landscape.as">
+    <entry file="file://$PROJECT_DIR$/src/Game.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="41" selection-start="1751" selection-end="1761" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#110#143#0" expanded="true" />
-          </folding>
+        <state line="15" column="14" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -648,16 +619,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Creature.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="9" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
+        <state line="20" column="9" selection-start="337" selection-end="337" vertical-scroll-proportion="0.05">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.as">
+    <entry file="file://$PROJECT_DIR$/src/Landscape.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="247" selection-end="247" vertical-scroll-proportion="0.5">
+        <state line="69" column="1" selection-start="1792" selection-end="1792" vertical-scroll-proportion="2.07">
           <folding>
-            <element signature="e#110#135#0" expanded="true" />
+            <element signature="e#110#140#0" expanded="true" />
           </folding>
         </state>
       </provider>
