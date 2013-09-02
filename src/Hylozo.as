@@ -9,7 +9,7 @@ package
 
 	import starling.core.Starling;
 
-	[SWF(width='1024',height='600',backgroundColor='#333333',frameRate='60')]
+	[SWF(width='1024',height='600',backgroundColor='#000000',frameRate='60')]
 	public class Hylozo extends Sprite
 	{
 		private var _starling:Starling;

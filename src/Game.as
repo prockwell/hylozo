@@ -6,12 +6,15 @@
  */
 package
 {
-	import starling.display.Shape;
+	import creatures.Builder;
+
 	import starling.display.Sprite;
 	import starling.events.Event;
 
 	public class Game extends Sprite
 	{
+		private var _landscape:Landscape;
+
 		public function Game()
 		{
 			super();
@@ -20,15 +23,15 @@ package
 
 		private function onAddedToStage(e:Event):void
 		{
-			var _shape:Shape = new Shape();
-			addChild(_shape);
+			//create landscape
+			_landscape = new Landscape(stage.stageWidth, stage.stageHeight);
+			addChild(_landscape);
 
-			_shape.graphics.beginFill(0xffffff);
-			_shape.graphics.drawCircle(0,0, 20)
-			_shape.graphics.endFill();
-
-			_shape.x = stage.stageWidth/2;
-			_shape.y = stage.stageHeight/2;
+			//populate
+			var builder:Builder = new Builder();
+			builder.gridPosX = 5;
+			builder.gridPosY = 10;
+			addChild(builder);
 		}
 	}
 }

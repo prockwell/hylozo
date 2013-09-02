@@ -20,6 +20,9 @@
             <entry library-name="starlingGraphics" library-level="application">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-name="src" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="flexSDK" />
         </dependencies>
@@ -43,6 +46,7 @@
     <orderEntry type="library" exported="" name="hiResStats" level="application" />
     <orderEntry type="library" exported="" name="starling" level="application" />
     <orderEntry type="library" exported="" name="starlingGraphics" level="application" />
+    <orderEntry type="library" exported="" name="src" level="application" />
   </component>
 </module>
 
