@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DConsole2.3" type="flex">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/DConsole2.3.swc!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
