@@ -28,6 +28,11 @@ package
 			addChild(_landscape);
 
 			//populate
+			populateWorld();
+		}
+
+		private function populateWorld():void
+		{
 			var builder:Builder = new Builder();
 			builder.gridPosX = 5;
 			builder.gridPosY = 10;

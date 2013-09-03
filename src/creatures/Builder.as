@@ -14,7 +14,6 @@ package creatures
 		{
 			super();
 			init();
-
 		}
 
 		private function init():void

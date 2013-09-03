@@ -10,13 +10,11 @@ package
 	import starling.display.Shape;
 	import starling.display.Sprite;
 
+	import utils.GridPosition;
+
 	public class Landscape extends Sprite
 	{
-		private static const GRID_BLOCK_SIZE:int = 50;
-		private static const GRID_WIDTH:int = 60;
-		private static const GRID_HEIGHT:int = 60;
 		private const BACKGROUND_COLOUR:int = 0x222222;
-
 		private var _landscapeWidth:int;
 		private var _landscapeHeight:int;
 		private var _vertices:Vector.<Vector.<Image>>;
@@ -41,10 +39,10 @@ package
 
 			//add vertex points
 			_vertices = new Vector.<Vector.<Image>>();
-			for (var i:int = 0; i < GRID_WIDTH; i++)
+			for (var i:int = 0; i < Constants.GRID_WIDTH; i++)
 			{
 				var dimension:Vector.<Image> = new Vector.<Image>();
-				for (var j:int = 0; j < GRID_HEIGHT; j++)
+				for (var j:int = 0; j < Constants.GRID_HEIGHT; j++)
 				{
 					var vertexImage:Image = new Image(Assets.getTexture("Vertex"));
 					addChild(vertexImage);
@@ -52,19 +50,15 @@ package
 
 					//TODO Fix in image
 					vertexImage.alpha = 0.5;
-					vertexImage.scaleX = 0.5;
-					vertexImage.scaleY = 0.5;
+					vertexImage.scaleX = 0.8;
+					vertexImage.scaleY = 0.8;
 
-					vertexImage.x = getRealPos(i) -  vertexImage.width/2;
-					vertexImage.y = getRealPos(j) - vertexImage.height/2;
+					var gridPos:GridPosition = new GridPosition(i, j);
+					vertexImage.x = gridPos.realX -  vertexImage.width/2;
+					vertexImage.y = gridPos.realY - vertexImage.height/2;
 				}
 				_vertices.push(dimension);
 			}
-		}
-
-		public static function getRealPos(gridPos:int):int
-		{
-			return gridPos * GRID_BLOCK_SIZE;
 		}
 	}
 }

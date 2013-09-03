@@ -7,36 +7,40 @@
 package {
 	import starling.display.Sprite;
 
+	import utils.GridPosition;
+
 	public class Creature extends Sprite
 	{
-		protected var _gridPosX:int;
-		protected var _gridPosY:int;
+		private var _gridPosition:GridPosition;
 
 		public function Creature()
 		{
 			super();
+			_gridPosition = new GridPosition();
 		}
 
-		public function get gridPosX():int
+		public function get gridPosition():GridPosition
 		{
-			return _gridPosX;
+			return _gridPosition;
+		}
+
+		public function set gridPosition(value:GridPosition):void
+		{
+			_gridPosition = value;
+			x = _gridPosition.realX;
+			y = _gridPosition.realY;
 		}
 
 		public function set gridPosX(value:int):void
 		{
-			_gridPosX = value;
-			x = Landscape.getRealPos(value);
-		}
-
-		public function get gridPosY():int
-		{
-			return _gridPosY;
+			_gridPosition.gridX = value;
+			x = _gridPosition.realX;
 		}
 
 		public function set gridPosY(value:int):void
 		{
-			_gridPosY = value;
-			y = Landscape.getRealPos(value);
+			_gridPosition.gridY = value;
+			y = _gridPosition.realY;
 		}
 	}
 }
