@@ -14,6 +14,7 @@ package
 	public class Game extends Sprite
 	{
 		private var _landscape:Landscape;
+		private var _structure:Structure;
 
 		public function Game()
 		{
@@ -27,6 +28,10 @@ package
 			_landscape = new Landscape(stage.stageWidth, stage.stageHeight);
 			addChild(_landscape);
 
+			//add structure
+			_structure = Structure.getInstance();
+			addChild(_structure);
+
 			//populate
 			populateWorld();
 		}
@@ -35,7 +40,7 @@ package
 		{
 			var builder:Builder = new Builder();
 			builder.gridPosX = 5;
-			builder.gridPosY = 10;
+			builder.gridPosY = 5;
 			addChild(builder);
 		}
 	}

@@ -6,18 +6,33 @@
  */
 package {
 	import starling.display.Sprite;
+	import starling.events.Event;
 
 	import utils.GridPosition;
 
 	public class Creature extends Sprite
 	{
-		private var _gridPosition:GridPosition;
+		protected var _gridPosition:GridPosition;
 
 		public function Creature()
 		{
 			super();
 			_gridPosition = new GridPosition();
+			addEventListener(Event.ENTER_FRAME, update);
 		}
+
+		public function destroy():void
+		{
+			removeEventListener(Event.ENTER_FRAME, update);
+			_gridPosition = null;
+		}
+
+		public function update(e:Event):void
+		{
+			//override in subclass
+		}
+
+		//GETTERS / SETTERS
 
 		public function get gridPosition():GridPosition
 		{
