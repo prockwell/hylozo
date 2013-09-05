@@ -18,7 +18,7 @@ package
 
 		private static var _gameTextures:Dictionary = new Dictionary();
 
-		public static function getTexture(name:String)
+		public static function getTexture(name:String):Texture
 		{
 			if(_gameTextures[name] == undefined)
 			{

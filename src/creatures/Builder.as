@@ -11,11 +11,13 @@ package creatures
 
 	import utils.GridPosition;
 	import utils.MathUtils;
+	import utils.Vec2Const;
 
 	public class Builder extends Creature
 	{
-		private var _destination:GridPosition;
-		private var _speed:Number = 3.5;
+		private const DIRECTION_CHANGE_CHANCE:Number = 0.3;
+		private var _direction:Vec2Const;
+		private var _speed:Number = 1;
 		private var _line:Shape;
 
 		public function Builder()
@@ -29,6 +31,8 @@ package creatures
 			_line = new Shape();
 			addChild(_line);
 
+			_direction = Vec2Const.DOWN;
+
 			var shape:Shape = new Shape();
 			shape.graphics.beginFill(0xff00ff);
 			shape.graphics.drawRect(0,0,20,20);
@@ -40,69 +44,96 @@ package creatures
 
 		override public function update(e:Event):void
 		{
-			//if no destination exists then create a new one
-			if(!_destination)
+			var travelPosX:int = this.x;
+			var travelPosY:int = this.y;
+			var nextVertex:GridPosition;
+			var gridVertexPassed:Boolean = false;
+
+			//move the sprite in the chosen direction
+			if(_direction.equals(Vec2Const.UP))
 			{
-				_destination = new GridPosition();
-				if(MathUtils.randomBoolean())
+				travelPosY -= _speed;
+				nextVertex = new GridPosition(_gridPosition.gridX, Math.max(_gridPosition.gridY - 1, 0));
+				if(travelPosY <= nextVertex.realY)
 				{
-					//move on X axis
-					_destination.gridX = MathUtils.randomRangeInt(0, Constants.GRID_WIDTH - 1);
-					_destination.gridY = _gridPosition.gridY;
+					gridVertexPassed = true;
 				}
-				else
+			}
+			else if (_direction.equals(Vec2Const.DOWN))
+			{
+				travelPosY += _speed;
+				nextVertex = new GridPosition(_gridPosition.gridX, Math.min(_gridPosition.gridY + 1, Constants.GRID_HEIGHT - 1));
+				if(travelPosY >= nextVertex.realY)
 				{
-					//move on Y axis
-					_destination.gridY = MathUtils.randomRangeInt(0, Constants.GRID_HEIGHT - 1);
-					_destination.gridX = _gridPosition.gridX;
+					gridVertexPassed = true;
+				}
+			}
+			else if (_direction.equals(Vec2Const.RIGHT))
+			{
+				travelPosX += _speed;
+				nextVertex = new GridPosition(Math.min(_gridPosition.gridX + 1, Constants.GRID_WIDTH - 1), _gridPosition.gridY);
+				if(travelPosX >= nextVertex.realX)
+				{
+					gridVertexPassed = true;
+				}
+			}
+			else if (_direction.equals(Vec2Const.LEFT))
+			{
+				travelPosX -= _speed;
+				nextVertex = new GridPosition(Math.max(_gridPosition.gridX - 1, 0), _gridPosition.gridY);
+				if(travelPosX <= nextVertex.realX)
+				{
+					gridVertexPassed = true;
 				}
 			}
 
-			//move toward destination
-			var travel:Number;
-			if(_destination.realX != this.x)
+			//if a grid vertex has been passed then link the vertices
+			//small chance to change direction (switch vertical/horizontal movement)
+			if(gridVertexPassed)
 			{
-				if (_destination.realX > this.x)
+				//set the position back to the last vertex reached to remain on the grid
+				_gridPosition = nextVertex;
+				this.x = _gridPosition.realX;
+				this.y = _gridPosition.realY;
+
+
+				if(MathUtils.randomRange(0,1) <= DIRECTION_CHANGE_CHANCE)
 				{
-					travel = Math.min(this.x + _speed, _destination.realX);
+					if(_direction.x == 0) //travelling vertically
+					{
+						if(MathUtils.randomBoolean())
+						{
+							_direction = Vec2Const.RIGHT;
+						}
+						else
+						{
+							_direction = Vec2Const.LEFT;
+						}
+					}
+					else //travelling horizontally
+					{
+						if(MathUtils.randomBoolean())
+						{
+							_direction = Vec2Const.UP;
+						}
+						else
+						{
+							_direction = Vec2Const.DOWN;
+						}
+					}
 				}
-				else
-				{
-					travel = Math.max(this.x - _speed, _destination.realX);
-				}
-				this.x = travel;
-			}
-			else if (_destination.realY != this.y)
-			{
-				if (_destination.realY > this.y)
-				{
-					travel = Math.min(this.y + _speed, _destination.realY);
-				}
-				else
-				{
-					travel = Math.max(this.y - _speed, _destination.realY);
-				}
-				this.y = travel;
 			}
 			else
 			{
-				onDestinationReached();
+				this.x = travelPosX;
+				this.y = travelPosY;
 			}
 
-			//create line from previous position
-
 			//TODO line creation needs to be fixed (non-local)
-			_line.graphics.clear();
-			_line.graphics.lineStyle(2,0xffffff);
-			_line.graphics.moveTo(_gridPosition.realX, _gridPosition.realY);
-			_line.graphics.lineTo(this.x, this.y);
-		}
-
-		private function onDestinationReached():void
-		{
-			_gridPosition = _destination;
-			Structure.getInstance().addPoint(_gridPosition);
-			_destination = null;
+//			_line.graphics.clear();
+//			_line.graphics.lineStyle(2,0xffffff);
+//			_line.graphics.moveTo(_gridPosition.realX, _gridPosition.realY);
+//			_line.graphics.lineTo(this.x, this.y);
 		}
 	}
 }
