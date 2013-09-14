@@ -17,6 +17,13 @@ package utils
 			_gridY = gridY;
 		}
 
+		public function equals(otherPosition:GridPosition):Boolean
+		{
+			return _gridX == otherPosition._gridX && _gridY == otherPosition._gridY;
+		}
+
+		//Getters and setters
+
 		public function get gridX():int
 		{
 			return _gridX;

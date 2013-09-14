@@ -18,7 +18,6 @@ package creatures
 		private const DIRECTION_CHANGE_CHANCE:Number = 0.3;
 		private var _direction:Vec2Const;
 		private var _speed:Number = 1;
-		private var _line:Shape;
 
 		public function Builder()
 		{
@@ -28,9 +27,6 @@ package creatures
 
 		private function init():void
 		{
-			_line = new Shape();
-			addChild(_line);
-
 			_direction = Vec2Const.DOWN;
 
 			var shape:Shape = new Shape();
@@ -91,6 +87,12 @@ package creatures
 			//small chance to change direction (switch vertical/horizontal movement)
 			if(gridVertexPassed)
 			{
+				//link vertices if they are different
+				if(!_gridPosition.equals(nextVertex))
+				{
+					Structure.getInstance().linkVertices(_gridPosition, nextVertex);
+				}
+
 				//set the position back to the last vertex reached to remain on the grid
 				_gridPosition = nextVertex;
 				this.x = _gridPosition.realX;
@@ -129,11 +131,12 @@ package creatures
 				this.y = travelPosY;
 			}
 
-			//TODO line creation needs to be fixed (non-local)
-//			_line.graphics.clear();
-//			_line.graphics.lineStyle(2,0xffffff);
-//			_line.graphics.moveTo(_gridPosition.realX, _gridPosition.realY);
-//			_line.graphics.lineTo(this.x, this.y);
+			//Create temporary line that follows builder
+			var line:Shape = Structure.getInstance().tempVisual;
+			line.graphics.clear();
+			line.graphics.lineStyle(Structure.LINE_SIZE, Structure.LINE_COLOUR);
+			line.graphics.moveTo(_gridPosition.realX, _gridPosition.realY);
+			line.graphics.lineTo(this.x, this.y);
 		}
 	}
 }

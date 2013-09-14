@@ -17,6 +17,11 @@ package
 		private static var _instance:Structure;
 		private var _vertices:Vector.<Vector.<GridVertex>>;
 		private var _visual:Shape;
+		public var tempVisual:Shape;
+
+		//line properties
+		public static const LINE_SIZE:Number = 1;
+		public static const LINE_COLOUR:int = 0xFFFFFF;
 
 		public static function getInstance():Structure
 		{
@@ -46,6 +51,9 @@ package
 
 			_visual = new Shape();
 			addChild(_visual);
+
+			tempVisual = new Shape();
+			addChild(tempVisual);
 		}
 
 		public function linkVertices(point1:GridPosition, point2:GridPosition):void
@@ -99,7 +107,7 @@ package
 			}
 
 			//update link visual
-			_visual.graphics.lineStyle(2,0xffffff);
+			_visual.graphics.lineStyle(LINE_SIZE,LINE_COLOUR);
 			_visual.graphics.moveTo(point1.realX, point1.realY);
 			_visual.graphics.lineTo(point2.realX, point2.realY);
 		}
