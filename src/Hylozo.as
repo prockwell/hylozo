@@ -17,7 +17,10 @@ package
 		public function Hylozo()
 		{
 			addChild(DConsole.view);
-			addChild(new Stats());
+
+			var stats:Stats = new Stats();
+			stats.x = this.width - 70;
+			addChild(stats);
 
 			_starling = new Starling(Game, stage);
 			_starling.antiAliasing = 1;

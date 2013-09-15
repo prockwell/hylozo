@@ -15,6 +15,7 @@ package
 	{
 		private var _landscape:Landscape;
 		private var _structure:Structure;
+		private var _resources:ResourceSystem;
 
 		public function Game()
 		{
@@ -31,6 +32,10 @@ package
 			//add structure
 			_structure = Structure.getInstance();
 			addChild(_structure);
+
+			//add resources
+			_resources = ResourceSystem.getInstance();
+			addChild(_resources);
 
 			//populate
 			populateWorld();

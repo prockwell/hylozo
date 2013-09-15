@@ -27,5 +27,12 @@ package utils
 			max = Math.floor(max);
 			return min + Math.floor(Math.random() * (max + 1 - min));
 		}
+
+		public static function distanceBetweenTwoPoints(x1:Number, y1:Number,  x2:Number, y2:Number):Number
+		{
+			var dx:Number = x2-x1;
+			var dy:Number = y2-y1;
+			return Math.sqrt(dx * dx + dy * dy);
+		}
 	}
 }

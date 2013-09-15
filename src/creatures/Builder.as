@@ -18,11 +18,13 @@ package creatures
 		private const DIRECTION_CHANGE_CHANCE:Number = 0.3;
 		private var _direction:Vec2Const;
 		private var _speed:Number = 1;
+		private var _resourceSystem:ResourceSystem;
 
 		public function Builder()
 		{
 			super();
 			init();
+			_resourceSystem = ResourceSystem.getInstance();
 		}
 
 		private function init():void
@@ -137,6 +139,13 @@ package creatures
 			line.graphics.lineStyle(Structure.LINE_SIZE, Structure.LINE_COLOUR);
 			line.graphics.moveTo(_gridPosition.realX, _gridPosition.realY);
 			line.graphics.lineTo(this.x, this.y);
+
+			lookForResources();
+		}
+
+		private function lookForResources():void
+		{
+			_resourceSystem.checkForResources(_gridPosition);
 		}
 	}
 }

@@ -44,12 +44,12 @@ package utils
 			_gridY = value;
 		}
 
-		public function get realX():int
+		public function get realX():Number
 		{
 			return _gridX * Constants.GRID_BLOCK_SIZE;
 		}
 
-		public function get realY():int
+		public function get realY():Number
 		{
 			return _gridY * Constants.GRID_BLOCK_SIZE;
 		}

@@ -49,7 +49,7 @@ package
 					dimension.push(vertexImage);
 
 					//TODO Fix in image
-					vertexImage.alpha = 0.5;
+					vertexImage.alpha = 0.2;
 					vertexImage.scaleX = 0.8;
 					vertexImage.scaleY = 0.8;
 
