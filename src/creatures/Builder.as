@@ -19,6 +19,7 @@ package creatures
 		private var _direction:Vec2Const;
 		private var _speed:Number = 1;
 		private var _resourceSystem:ResourceSystem;
+		private var _resourceCollected:int = 0;
 
 		public function Builder()
 		{
@@ -140,12 +141,9 @@ package creatures
 			line.graphics.moveTo(_gridPosition.realX, _gridPosition.realY);
 			line.graphics.lineTo(this.x, this.y);
 
-			lookForResources();
-		}
-
-		private function lookForResources():void
-		{
-			_resourceSystem.checkForResources(_gridPosition);
+			//Look for resource in the vicinity
+			var collected:int = _resourceSystem.checkForResources(this);
+			_resourceCollected += collected;
 		}
 	}
 }

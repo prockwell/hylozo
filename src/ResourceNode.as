@@ -11,12 +11,10 @@ package
 	import starling.display.Shape;
 	import starling.display.Sprite;
 
-	import utils.GridPosition;
-
 	public class ResourceNode extends Sprite
 	{
 		private var _visual:Shape;
-		private const COLLECT_TIME:Number = 1.0;
+		private const COLLECT_TIME:Number = 0.3;
 
 		public function ResourceNode()
 		{
@@ -35,14 +33,15 @@ package
 			_visual.y = -_visual.height/2;
 		}
 
-		public function collect(collectPos:GridPosition):void
+		public function collect(creature:Creature):void
 		{
-			TweenLite.to(this, COLLECT_TIME, {x:collectPos.realX, y:collectPos.realY, onComplete:onCollectComplete})
+			TweenLite.to(this, COLLECT_TIME, {x:creature.x, y:creature.y, onComplete:onCollectComplete})
+			ResourceSystem.getInstance().removeResourceNode(this);
 		}
 
 		private function onCollectComplete():void
 		{
-			//REMOVE
+			this.parent.removeChild(this);
 		}
 	}
 }

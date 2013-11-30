@@ -8,7 +8,6 @@ package
 {
 	import starling.display.Sprite;
 
-	import utils.GridPosition;
 	import utils.MathUtils;
 
 	public class ResourceSystem extends Sprite
@@ -45,24 +44,29 @@ package
 			}
 		}
 
-		public function checkForResources(builderPos:GridPosition):int
+		public function checkForResources(creature:Creature):int
 		{
 			var resourcesCollected:int = 0;
 
 			for (var i:int = 0; i < _resourceNodes.length; i++)
 			{
 				var resourceNode:ResourceNode = _resourceNodes[i];
-				var distance:Number = MathUtils.distanceBetweenTwoPoints(builderPos.realX, builderPos.realY, resourceNode.x, resourceNode.y);
+				var distance:Number = MathUtils.distanceBetweenTwoPoints(creature.x, creature.y, resourceNode.x, resourceNode.y);
 
 				if(distance <= COLLECT_DISTANCE)
 				{
 					resourcesCollected++;
-					resourceNode.collect(builderPos);
+					resourceNode.collect(creature);
 				}
-
 			}
 
 			return resourcesCollected;
+		}
+
+		public function removeResourceNode(node:ResourceNode):void
+		{
+			var index:int = _resourceNodes.indexOf(node);
+			_resourceNodes.splice(index, 1);
 		}
 
 		private function update():void
